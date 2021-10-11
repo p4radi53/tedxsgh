@@ -1,0 +1,160 @@
+#schedule {
+  position: relative;
+
+  > .lines {
+    display: none;
+
+    @include md-up {
+      right: -0px;
+      top: -200px;
+      width: 15vw;
+      height: 800px;
+    }
+  }
+}
+
+.schedule {
+  border-left: 1px solid #eee;
+  padding-left: 5px;
+
+  &-text {
+    margin: 80px 0;
+
+    > * {
+      text-align: center;
+    }
+  }
+
+  @include sm-up {
+    padding-left: 20px;
+  }
+
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 50px 0;
+
+    @include md-up {
+      flex-wrap: nowrap;
+    }
+
+    .schedule-row-title {
+      width: 150px;
+
+      @include sm-up {
+        width: 200px;
+      }
+    }
+
+    > button, h5, p {
+      margin: 10px;
+
+      @include lg-up {
+        margin: 20px;
+      }
+    }
+
+    p {
+      @include lg-up {
+        width: 60%;
+      }
+    }
+
+    button {
+      position: relative;
+
+      &:before {
+        content: '';
+        display: block;
+        height: 1px;
+        background: #ccc;
+        position: absolute;
+        top: 50%;
+        left: -15px;
+        width: 15px;
+
+        @include sm-up {
+          left: -30px;
+          width: 30px;
+        }
+
+        @include lg-up {
+          left: -40px;
+          width: 40px;
+        }
+      }
+    }
+  }
+
+  .speaker {
+    &-box {
+      padding: 30px 50px;
+      background: #fff;
+      box-shadow: 0 52px 114px 0 rgba(38,58,124,0.05);
+      text-align: center;
+      position: relative;
+      min-height: 320px;
+
+      &-wrapper {
+        position: relative;
+
+        .lines {
+          left: -10px;
+          top: 10px;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      img {
+        width: 300px;
+
+        @include lg-up {
+          width: 350px;
+        }
+      }
+
+      &--empty {
+        background: #e62b1e;
+        font-size: 100px;
+        color: white;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include lg-up {
+          height: 350px;
+          width: 350px;
+        }
+      }
+    }
+
+    &-description {
+      color: white;
+      padding: 20px;
+      @include font(13, normal);
+
+      &-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: 0.4s;
+
+        &:hover {
+          opacity: 1;
+          background-color: $red;
+        }
+      }
+
+      b {
+        @include font-weight(bold)
+      }
+    }
+  }
+}
