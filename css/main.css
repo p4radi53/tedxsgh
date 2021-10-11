@@ -812,7 +812,7 @@ p {
     .header {
       height: 650px; } }
   .header .header-image {
-    background: url("../assets/images/piotr-bucki-scena@2x.jpg");
+    background: url("../assets/images/background_2021.jpg");
     background-position: center center;
     background-size: cover;
     display: none;
